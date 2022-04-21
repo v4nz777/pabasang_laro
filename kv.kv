@@ -1,0 +1,1333 @@
+<MagicWobble@MagicBehavior+MDRaisedButton>:
+<MagicWobbleIcon@MagicBehavior+MDIconButton>:
+    icon_size: "64sp"
+<MDIconButton>:
+    md_bg_color_disabled: 0,0,0,0
+
+<MainMenu>:
+    canvas.before:
+        Rectangle:
+            source: 'intro_bg.jpg'
+            pos: self.pos
+            size: self.size
+    GridLayout:
+        rows: 3
+        
+        MDTopAppBar:
+            title: "Pabasang Laro"
+        #    pos_hint: {'top':1}
+        #    left_action_items: [["arrow-left"]]
+            right_action_items: [["wifi-cancel", lambda x: root.on_toggle(x)]] 
+        MDBoxLayout:
+            orientation: 'vertical'
+            Image:
+                id: official_logo
+                source: "logo.png"
+                size_hint_y: 1
+                size_hint_x: 1
+                size: self.texture_size
+                allow_stretch: True
+                pos_hint: {'center_x': 0.5}
+            
+            MagicWobble:
+                text: "Start"
+                id: start_btn
+                font_size: "30sp"
+                font_name: "NotoSerif-Regular.ttf"
+                size_hint: None, None
+                pos_hint: {'center_x': 0.5}
+                on_press:
+                    self.wobble()
+                on_release:
+                    root.manager.current = "IntroToAlphabets"
+                    root.manager.transition.direction = "left"
+            
+
+        MDBoxLayout:
+            orientation: 'horizontal'   
+            MDFlatButton:
+                text: "P1 Answers"
+                #size: 400, 120
+                id: ap_1
+                on_press:
+                    root.manager.current = "AnswerP1"
+                    root.manager.transition.direction = "left"
+
+            MDFlatButton:
+                text: "P2 Answers"
+                #size: 430, 120
+                id: ap_2
+                on_press:
+                    root.manager.current = "AnswerP2"
+                    root.manager.transition.direction = "left"
+
+            MDFlatButton:
+                text: "P3 Answers"
+                #size: 400, 120
+                id: ap_3
+                on_press:
+                    root.manager.current = "AnswerP3"
+                    root.manager.transition.direction = "left"
+
+            MDFlatButton:
+                text: "P4 Answers"
+                #size: 400, 120
+                id: ap_4
+                on_press:
+                    root.manager.current = "AnswerP4"
+                    root.manager.transition.direction = "left"
+
+            MDFlatButton:
+                text: "P5 Answers"
+                #size: 400, 120
+                id: ap_5
+                on_press:
+                    root.manager.current = "AnswerP5"
+                    root.manager.transition.direction = "left"
+
+            MDFlatButton:
+                text: "P6 Answers"
+                #size: 400, 120
+                id: ap_6
+                on_press:
+                    root.manager.current = "AnswerP6"
+                    root.manager.transition.direction = "left"
+        
+####################### ANSWERS #####################################
+<AnswerP1>:
+    GridLayout:
+        rows: 2
+        MDTopAppBar:
+            title: "Phase1 Answers"
+            pos_hint: {'top':1}
+            left_action_items: [["home", lambda x: root.manager.switch('MainMenu')]]
+            
+        ScrollView:
+            pos_hint: {'top':0.85}
+            size: self.size
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                id: answers_p1
+                size_hint: 1, None
+                cols: 2
+                padding: 15,10,15,10
+                spacing: 1,25
+                height: self.minimum_height
+                width: self.minimum_width
+
+<AnswerP2>:
+    GridLayout:
+        rows: 2
+        MDTopAppBar:
+            title: "Phase2 Answers"
+            pos_hint: {'top':1}
+            left_action_items: [["home", lambda x: root.manager.switch('MainMenu')]]
+            
+        ScrollView:
+            pos_hint: {'top':0.85}
+            size: self.size
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                id: answers_p2
+                size_hint: 1, None
+                cols: 2
+                padding: 15,10,15,10
+                spacing: 1,25
+                height: self.minimum_height
+                width: self.minimum_width 
+
+<AnswerP3>:
+    GridLayout:
+        rows: 2
+        MDTopAppBar:
+            title: "Phase3 Answers"
+            pos_hint: {'top':1}
+            left_action_items: [["home", lambda x: root.manager.switch('MainMenu')]]
+            
+        ScrollView:
+            pos_hint: {'top':0.85}
+            size: self.size
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                id: answers_p3
+                size_hint: 1, None
+                cols: 2
+                padding: 15,10,15,10
+                spacing: 1,25
+                height: self.minimum_height
+                width: self.minimum_width 
+
+<AnswerP4>:
+    GridLayout:
+        rows: 2
+        MDTopAppBar:
+            title: "Phase4 Answers"
+            pos_hint: {'top':1}
+            left_action_items: [["home", lambda x: root.manager.switch('MainMenu')]]
+            
+        ScrollView:
+            pos_hint: {'top':0.85}
+            size: self.size
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                id: answers_p4
+                size_hint: 1, None
+                cols: 2
+                padding: 15,10,15,10
+                spacing: 1,25
+                height: self.minimum_height
+                width: self.minimum_width 
+    
+
+<AnswerP5>:
+    GridLayout:
+        rows: 2
+        MDTopAppBar:
+            title: "Phase5 Answers"
+            pos_hint: {'top':1}
+            left_action_items: [["home", lambda x: root.manager.switch('MainMenu')]]
+            
+        ScrollView:
+            pos_hint: {'top':0.85}
+            size: self.size
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                id: answers_p5
+                size_hint: 1, None
+                cols: 2
+                padding: 15,10,15,10
+                spacing: 1,25
+                height: self.minimum_height
+                width: self.minimum_width 
+
+
+<AnswerP6>:
+    GridLayout:
+        rows: 2
+        MDTopAppBar:
+            title: "Phase6 Answers"
+            pos_hint: {'top':1}
+            left_action_items: [["home", lambda x: root.manager.switch('MainMenu')]]
+            
+        ScrollView:
+            pos_hint: {'top':0.85}
+            size: self.size
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                id: answers_p6
+                size_hint: 1, None
+                cols: 2
+                padding: 15,10,15,10
+                spacing: 1,25
+                height: self.minimum_height
+                width: self.minimum_width 
+
+
+#############################################################################################
+################################## START OF GAMES ###########################################
+#############################################################################################
+<IntroToAlphabets>:
+    abctable: abc
+    MDTopAppBar:
+        title: "Introduction to Alphabets"
+        pos_hint: {'top':1}
+        left_action_items: [["home", lambda x: root.manager.switch('MainMenu')]]
+        right_action_items: [["arrow-right", lambda x: root.manager.switch('PhaseOneTest'), 'Game 1']]
+
+    MDGridLayout:
+        id: abc
+        pos_hint: {"center_y": 0.4, "center_x": 0.5}
+        cols: 7
+        adaptive_size: True
+        spacing: 5,5
+
+
+<TheAlphabet>:
+<PhaseOneTest>:
+    the_alphabet: the_alphabet
+    progress_bar: progress_bar
+    microphone: mic_button
+    speaker: speaker_button
+    next_button: nxt_button
+    toolbar: toolbar
+    GridLayout:
+        rows: 6
+        MDTopAppBar:
+            id: toolbar
+            disabled: False
+            title: "Game 1"
+            #pos_hint: {'top':1}
+            left_action_items: [["home", lambda x: root.manager.switch('MainMenu')]]
+            right_action_items: [["arrow-right", lambda x: root.manager.switch('Phoenetics'), 'Phonetics']]
+        
+        GridLayout:
+            cols:3
+            BoxLayout:
+            TheAlphabet:
+                id: the_alphabet
+                size: ltr_lbl.size
+                disabled: True
+                size_hint: None, 1
+                pos_hint: {'center_x': 0.5}
+                Label:
+                    font_name: 'NotoSerif-Regular.ttf'
+                    id: ltr_lbl
+                    text: ''
+                    font_size: '100dp'
+                    halign: 'center'
+                    color: 0,0,.5,1
+                    size: 300,100
+            BoxLayout:
+
+        GridLayout:
+            cols:3
+            BoxLayout:
+            MagicWobbleIcon:
+                id: nxt_button
+                icon: "arrow-right-bold"
+                disabled: True
+                #pos: 500,130
+                pos_hint: {'center_x': 0.5}
+                size_hint_y: 0.5
+                on_press: 
+                    root.show_letter()
+            BoxLayout:
+
+        MDProgressBar:
+            id: progress_bar
+            orientation: "horizontal"
+            type: "determinate"
+            value: 0
+            pos: 0, 100
+            size_hint_y: 0.03
+        GridLayout:
+            cols: 4
+            BoxLayout:
+            MagicWobbleIcon:
+                id: mic_button
+                icon: "microphone"
+                icon_color: 1,0,1,1
+                size_hint_x: 1
+                #set_size: 64,64
+                #pos: 200,10
+                on_press: 
+                    root.validate()
+                    self.wobble()
+            MagicWobbleIcon:
+                id: speaker_button
+                icon: "volume-high"
+                size_hint_x: 1
+                
+                #set_size: 64,64
+                #pos: 300,10
+                on_press: 
+                    self.wobble()
+                    root.listen_answer()
+            BoxLayout:
+        BoxLayout:
+
+            
+<Phoenetics>:
+    MDTopAppBar:
+        title: "Phonetics"
+        pos_hint: {'top':1}
+        left_action_items: [["home", lambda x: root.manager.switch('MainMenu')]]
+        right_action_items: [["arrow-right", lambda x: root.manager.switch('PhaseTwoTest'), 'Game 2']]
+    
+    MDGridLayout:
+        id: phoenetics
+        pos_hint: {"center_y": 0.4, "center_x": 0.5}
+        cols: 7
+        adaptive_size: True
+        spacing: 5,5
+          
+<TheLetter>:
+<PhaseTwoTest>:
+    the_letter: the_letter
+    progress_bar: progress_bar
+    microphone: mic_button
+    speaker: speaker_button
+    next_button: nxt_button
+    toolbar: toolbar
+    GridLayout:
+        rows: 6
+        MDTopAppBar:
+            id: toolbar
+            disabled: False
+            title: "Game 2"
+            
+            left_action_items: [["home", lambda x: root.manager.switch('MainMenu')]]
+            right_action_items: [["arrow-right", lambda x: root.manager.switch('TwoLetterWords'), 'Two Letter Words']]
+    
+        GridLayout:
+            cols:3
+            BoxLayout:
+            TheLetter:
+                id: the_letter
+                size: ltr_lbl.size
+                disabled: True
+                size_hint: None, 1
+                
+                Label:
+                    font_name: 'NotoSerif-Regular.ttf'
+                    id: ltr_lbl
+                    text: ''
+                    font_size: '100dp'
+                    halign: 'center'
+                    color: 0,0.3,0,1
+                    size: 300,100
+            BoxLayout:
+
+        GridLayout:
+            cols:3
+            BoxLayout:
+            MagicWobbleIcon:
+                id: nxt_button
+                icon: "arrow-right-bold"
+                disabled: True
+                size_hint_y: 0.5
+                on_press: 
+                    self.wobble()
+                    root.show_letter()
+            BoxLayout:
+            
+
+        MDProgressBar:
+            id: progress_bar
+            orientation: "horizontal"
+            type: "determinate"
+            value: 0
+            pos: 0, 100
+            size_hint_y: 0.03
+        
+        GridLayout:
+            cols: 4
+            BoxLayout:
+        
+            MagicWobbleIcon:
+                id: mic_button
+                icon: "microphone"
+                #set_size: 64,64
+                pos: 200,10
+                on_press: 
+                    root.validate()
+                    self.wobble()
+            MagicWobbleIcon:
+                id: speaker_button
+                icon: "volume-high"
+                #set_size: 64,64
+                pos: 300,10
+                on_press: 
+                    root.listen_answer()
+                    self.wobble()
+            BoxLayout:
+        BoxLayout:
+
+
+#############################################################################
+<Blanky>:
+    size_hint: .3, None
+    disabled: True
+    auto_bring_to_front: False
+    size: img_blanky.size
+    Image:
+        id: img_blanky
+        size: '100dp','100dp'
+        source: "imgs/letter_blocks/empty.png"
+
+<TwoLetterWords>:
+    blank_1: blank_1
+    blank_2: blank_2
+    consonants: consonants
+    vowels: vowels
+    GridLayout:
+        rows: 4
+        MDTopAppBar:
+            title: "Two Letter Words Tutorial"
+            pos_hint: {'top':1}
+            left_action_items: [["arrow-left", lambda x: root.manager.switch('MainMenu')]]
+            right_action_items: [["arrow-right", lambda x: root.manager.switch('TwoLetterWordsLevel2'), 'Game 3 | Level II']]
+        GridLayout:
+            cols: 4
+            size_hint_y: 0.45
+            spacing: 10
+            BoxLayout:
+            Blanky:
+                id: blank_1
+            Blanky:
+                id: blank_2
+            BoxLayout:
+        BoxLayout:
+
+        GridLayout:
+            cols: 3
+            GridLayout:
+                cols: 11
+                id: consonants
+                size_hint: 1, None
+                spacing: 3
+            BoxLayout:
+                size_hint: 0.1, None
+            GridLayout:
+                cols: 2
+                id: vowels
+                size_hint: 0.2, None
+                spacing: 3
+        
+<Left@Vowel>:
+    size_hint: None, None
+    size: '55dp', '50dp'
+    location: "left"
+    Image: 
+        size: '55dp', '50dp'
+        source: 'imgs/letter_blocks/empty.png'
+
+<Right@Vowel>:
+    size_hint: None, None
+    size: '55dp', '50dp'
+    location: "right"
+    disabled: True
+    Image: 
+        size: '55dp', '50dp'
+        source: 'imgs/letter_blocks/empty.png'
+
+<TwoLetterWordsLevel2>:
+    left_a: left_a
+    left_e: left_e
+    left_i: left_i
+    left_o: left_o
+    left_u: left_u
+    right_a: right_a
+    right_e: right_e
+    right_i: right_i
+    right_o: right_o
+    right_u: right_u
+
+    consonants: consonants
+
+
+    GridLayout:
+        rows: 3
+        MDTopAppBar:
+            title: "Game 3 | Level I"
+            pos_hint: {'top':1}
+            left_action_items: [["home", lambda x: root.manager.switch('MainMenu')]]
+            right_action_items: [["arrow-right", lambda x: root.manager.switch('TwoLetterWordsLevel3'), 'Game 3 | Level III']]
+        GridLayout:
+            cols: 5
+            BoxLayout:
+             
+            GridLayout:
+                cols:2
+                spacing: 0
+                size_hint_x: 0.5
+                Left:
+                    id: left_a
+                    letter: 'a'
+                Image:
+                    size_hint: None, None
+                    size: '55dp', '50dp'
+                    source: 'imgs/letter_blocks/a.png'
+                Left:
+                    id: left_e
+                    letter: 'e'
+                Image:
+                    size_hint: None, None
+                    size: '55dp', '50dp'
+                    source: 'imgs/letter_blocks/e.png'
+                Left:
+                    id: left_i
+                    letter: 'i'
+                Image:
+                    size_hint: None, None
+                    size: '55dp', '50dp'
+                    source: 'imgs/letter_blocks/i.png'
+                Left:
+                    id: left_o
+                    letter: 'o'
+                Image:
+                    size_hint: None, None
+                    size: '55dp', '50dp'
+                    source: 'imgs/letter_blocks/o.png'
+                Left:
+                    id: left_u
+                    letter: 'u'
+                Image:
+                    size_hint: None, None
+                    size: '55dp', '50dp'
+                    source: 'imgs/letter_blocks/u.png'
+
+
+            BoxLayout:
+                size_hint_x: 0.4
+            GridLayout:
+                cols:2
+                spacing: 0
+                size_hint_x: 0.5
+                Image:
+                    size_hint: None, None
+                    size: '55dp', '50dp'
+                    source: 'imgs/letter_blocks/a.png'
+                Right:
+                    id: right_a
+                    letter: 'a'
+                Image:
+                    size_hint: None, None
+                    size: '55dp', '50dp'
+                    source: 'imgs/letter_blocks/e.png'
+                Right:
+                    id: right_e
+                    letter: 'e'
+                Image:
+                    size_hint: None, None
+                    size: '55dp', '50dp'
+                    source: 'imgs/letter_blocks/i.png'
+                Right:
+                    id: right_i
+                    letter: 'i'
+                Image:
+                    size_hint: None, None
+                    size: '55dp', '50dp'
+                    source: 'imgs/letter_blocks/o.png'
+                Right:
+                    id: right_o
+                    letter: 'o'
+                Image:
+                    size_hint: None, None
+                    size: '55dp', '50dp'
+                    source: 'imgs/letter_blocks/u.png'
+                Right:
+                    id: right_u
+                    letter: 'u'
+            BoxLayout:
+        
+        GridLayout:
+            id: consonants
+            rows: 3
+            pos_hint: {"center_x": 0.5}
+            spacing: 5,5
+                     
+<FirstBox>:
+<SecondBox>:
+<TwoLetterWordsLevel3>:
+    first_box: box1
+    second_box: box2
+    progress_bar: progress_bar
+    microphone: mic_button
+    speaker: speaker_button
+    next_button: nxt_button
+    toolbar: toolbar
+    GridLayout:
+        rows: 6
+        MDTopAppBar:
+            id: toolbar
+            disabled: False
+            title: "Game 3 | Level III"
+            pos_hint: {'top':1}
+            left_action_items: [["home", lambda x: root.manager.switch('MainMenu')]]
+            right_action_items: [["arrow-right", lambda x: root.manager.switch('Cvc'), 'CVC']]
+
+        GridLayout:
+            cols: 4
+            spacing: 5
+            BoxLayout:
+                size_hint_x: 0.5
+            
+            FirstBox:
+                id: box1
+                size: box_img_box1.size
+                disabled: True
+                size_hint: None,None
+                canvas:
+                    Rectangle:
+                        size: self.size            
+                Image:
+                    id: box_img_box1
+                    size: '100dp','100dp'
+                    source:"imgs/letter_blocks/empty.png"
+
+            SecondBox:
+                id: box2
+                size: box_img_box2.size
+                disabled: True
+                size_hint: None,None
+                canvas:
+                    Rectangle:
+                        size: self.size            
+                Image:
+                    id: box_img_box2
+                    ize: '100dp','100dp'
+                    source:"imgs/letter_blocks/empty.png"
+            BoxLayout:
+                size_hint_x: 0.5
+
+        GridLayout:
+            cols: 3
+            BoxLayout:
+            MagicWobbleIcon:
+                id: nxt_button
+                icon: "arrow-right-bold"
+                disabled: True
+                #set_size: 64,64
+                pos: 250,100
+                on_press: 
+                    root.next()
+                    self.wobble()
+            BoxLayout:
+
+        MDProgressBar:
+            id: progress_bar
+            orientation: "horizontal"
+            type: "determinate"
+            value: 0
+            pos: 0, 100
+            size_hint_y: 0.03
+        GridLayout:
+            cols: 4
+            BoxLayout:
+            MagicWobbleIcon:
+                id: mic_button
+                icon: "microphone"
+                #set_size: 64,64
+                pos: 200,10
+                on_press: 
+                    root.validate()
+                    self.wobble()
+            MagicWobbleIcon:
+                id: speaker_button
+                icon: "volume-high"
+                #set_size: 64,64
+                pos: 300,10
+                on_press: 
+                    root.listen_answer()
+                    self.wobble()
+            BoxLayout:
+        BoxLayout:
+    
+
+            
+<Cvc>:
+    MDTopAppBar:
+        title: "CVC"
+        pos_hint: {'top':1}
+        left_action_items: [["home", lambda x: root.manager.switch('MainMenu')]]
+        right_action_items: [["arrow-right", lambda x: root.manager.switch('CVCandE')]]
+    GridLayout:
+        cols: 1
+        size_hint: 1, 0.82
+    
+        Button:
+            text: "CVC Short /a/ words"
+            font_size: '20sp'
+            background_color: 1,0.54,0,1
+            on_release: 
+                root.manager.current = "VowelA"
+        Button:
+            text: "CVC Short  /e/ words"
+            font_size: '20sp'
+            background_color: 1,0.54,0,1
+            on_release: 
+                root.manager.current = "VowelE"
+        Button:
+            text: "CVC Short  /i/ words"
+            font_size: '20sp'
+            background_color: 1,0.54,0,1
+            on_release: 
+                root.manager.current = "VowelI"
+        Button:
+            text: "CVC Short  /o/ words"
+            font_size: '20sp'
+            background_color: 1,0.54,0,1
+            on_release: 
+                root.manager.current = "VowelO"
+        Button:
+            text: "CVC Short  /u/ words"
+            font_size: '20sp'
+            background_color: 1,0.54,0,1
+            on_release: 
+                root.manager.current = "VowelU"
+<VowelA>:
+    MDTopAppBar:
+        title: "CVC for Short /a/"
+        pos_hint: {'top':1}
+        left_action_items: [["arrow-left", lambda x: root.manager.switch('Cvc')]]
+        right_action_items: [["arrow-right", lambda x: root.manager.switch('CvcQuiz')]]
+    ScrollView:
+        size_hint: 1, None
+        height: 250
+        scroll_distance: 50
+        do_scroll_y: False
+        always_overscroll: True
+        BoxLayout:
+            id: cvc_a
+            size_hint: None, 1
+            width: self.minimum_width
+            orientation: 'horizontal'
+            padding: 10
+            spacing: 10
+<VowelE>:
+    MDTopAppBar:
+        title: "CVC for Short /e/"
+        pos_hint: {'top':1}
+        left_action_items: [["arrow-left", lambda x: root.manager.switch('Cvc')]]
+        right_action_items: [["arrow-right", lambda x: root.manager.switch('CvcQuiz')]]
+    ScrollView:
+        size_hint: 1, None
+        height: 250
+        scroll_distance: 50
+        do_scroll_y: False
+        always_overscroll: True
+        BoxLayout:
+            id: cvc_e
+            size_hint: None, 1
+            width: self.minimum_width
+            orientation: 'horizontal'
+            padding: 10
+            spacing: 10   
+
+<VowelI>:
+    MDTopAppBar:
+        title: "CVC for Short /i/"
+        pos_hint: {'top':1}
+        left_action_items: [["arrow-left", lambda x: root.manager.switch('Cvc')]]
+        right_action_items: [["arrow-right", lambda x: root.manager.switch('CvcQuiz')]]
+    ScrollView:
+        size_hint: 1, None
+        height: 250
+        scroll_distance: 50
+        do_scroll_y: False
+        always_overscroll: True
+        BoxLayout:
+            id: cvc_i
+            size_hint: None, 1
+            width: self.minimum_width
+            orientation: 'horizontal'
+            padding: 10
+            spacing: 10 
+
+<VowelO>:
+    MDTopAppBar:
+        title: "CVC for Short /o/"
+        pos_hint: {'top':1}
+        left_action_items: [["arrow-left", lambda x: root.manager.switch('Cvc')]]
+        right_action_items: [["arrow-right", lambda x: root.manager.switch('CvcQuiz')]]
+    ScrollView:
+        size_hint: 1, None
+        height: 250
+        scroll_distance: 50
+        do_scroll_y: False
+        always_overscroll: True
+        BoxLayout:
+            id: cvc_o
+            size_hint: None, 1
+            width: self.minimum_width
+            orientation: 'horizontal'
+            padding: 10
+            spacing: 10 
+<VowelU>:
+    MDTopAppBar:
+        title: "CVC for Short /u/"
+        pos_hint: {'top':1}
+        left_action_items: [["arrow-left", lambda x: root.manager.switch('Cvc')]]
+        right_action_items: [["arrow-right", lambda x: root.manager.switch('CvcQuiz')]]
+    ScrollView:
+        size_hint: 1, None
+        height: 250
+        scroll_distance: 50
+        do_scroll_y: False
+        always_overscroll: True
+        BoxLayout:
+            id: cvc_u
+            size_hint: None, 1
+            width: self.minimum_width
+            orientation: 'horizontal'
+            padding: 10
+            spacing: 10 
+<WordBox>:
+<CvcQuiz>:
+    word_box: wordbox
+    progress_bar: progress_bar
+    microphone: mic_button
+    speaker: speaker_button
+    next_button: nxt_button
+    toolbar: toolbar
+    GridLayout:
+        rows: 6
+        MDTopAppBar:
+            id: toolbar
+            disabled: False
+            title: "Phase 4 Quiz"
+            pos_hint: {'top':1}
+            left_action_items: [["arrow-left", lambda x: root.manager.switch('Cvc')]]
+            right_action_items: [["arrow-right", lambda x: root.manager.switch('CVCandE')]]
+        
+        GridLayout:
+            cols:3
+            BoxLayout:
+            WordBox:
+                id: wordbox
+                size: wordbox_img.size
+                size_hint: None,None   
+                disabled: True      
+                Image:
+                    id: wordbox_img
+                    size: self.texture_size
+                    source:"imgs/letter_blocks/empty.png"
+            BoxLayout:
+        GridLayout:
+            cols: 3
+            BoxLayout:
+            MagicWobbleIcon:
+                id: nxt_button
+                icon: "arrow-right-bold"
+                disabled: True
+                #set_size: 64,64
+                pos: 250,100
+                on_press: 
+                    root.show_word()
+                    self.wobble()
+            BoxLayout:
+
+        MDProgressBar:
+            id: progress_bar
+            orientation: "horizontal"
+            type: "determinate"
+            value: 0
+            pos: 0, 100
+            size_hint_y: 0.03
+        GridLayout:
+            cols: 4
+            BoxLayout:
+            MagicWobbleIcon:
+                id: mic_button
+                icon: "microphone"
+                #set_size: 64,64
+                pos: 200,10
+                on_press: 
+                    root.validate()
+                    self.wobble()
+            MagicWobbleIcon:
+                id: speaker_button
+                icon: "volume-high"
+                #set_size: 64,64
+                pos: 300,10
+                on_press: 
+                    root.listen_answer()
+                    self.wobble()
+            BoxLayout:
+        BoxLayout:
+
+
+            
+####################################################################################
+
+<Empty>:
+<Letter>:
+    size_hint: None,None
+    do_scale: False
+    do_rotation: False
+<CVCandE>:
+    _empty: empty_box
+    _m: ltr_m
+    _l: ltr_l
+    _s: ltr_s
+    _b: ltr_b
+    GridLayout:
+        rows: 3
+        MDTopAppBar:
+            title: "CVC + E"
+            pos_hint: {'top':1}
+            left_action_items: [["arrow-left", lambda x: root.manager.switch('Cvc')]]
+            right_action_items: [["arrow-right", lambda x: root.manager.switch('CvcQuiz2')]]
+        GridLayout:
+            cols: 4
+            BoxLayout:
+            Empty:
+                id: empty_box
+                disabled: True
+                size_hint: None,None
+                size: ltr_mt_img.size
+                do_scale: False
+                do_rotation: False
+                Image:
+                    id: ltr_mt_img
+                    size: self.texture_size
+                    source: "imgs/letter_blocks/empty.png"
+            Image:
+                size_hint: None,None
+                source: 'imgs/cvcplus/ake.png'
+                size: self.texture_size
+            BoxLayout:
+        BoxLayout:
+            orientation: 'horizontal'
+            Letter:
+                letter: "m"
+                id: ltr_m
+                initial_pos: 100,0   
+                pos: self.initial_pos  
+                size: ltr_m_img.size
+                canvas:
+                    Rectangle:
+                        size: self.size
+                Image:
+                    id: ltr_m_img
+                    size: '45dp','40dp'
+                    source: "imgs/letter_blocks/m.png"
+            Letter:
+                letter: "l"
+                id: ltr_l
+                initial_pos: 144,0   
+                pos: self.initial_pos  
+                size: ltr_l_img.size
+                canvas:
+                    Rectangle:
+                        size: self.size
+                Image:
+                    id: ltr_l_img
+                    size: '45dp','40dp'
+                    source: "imgs/letter_blocks/l.png"
+            
+            Letter:
+                letter: "s"
+                id: ltr_s
+                initial_pos: 188,0   
+                pos: self.initial_pos  
+                size: ltr_s_img.size
+                canvas:
+                    Rectangle:
+                        size: self.size
+                Image:
+                    id: ltr_s_img
+                    size: '45dp','40dp'
+                    source: "imgs/letter_blocks/s.png"
+
+            Letter:
+                letter: "b"
+                id: ltr_b
+                initial_pos: 232,0   
+                pos: self.initial_pos  
+                size: ltr_b_img.size
+                canvas:
+                    Rectangle:
+                        size: self.size
+                Image:
+                    id: ltr_b_img
+                    size: '45dp','40dp'
+                    source: "imgs/letter_blocks/b.png"
+<WordOutline>:
+<CvcQuiz2>:
+    word_outline: word_outline
+    progress_bar: progress_bar
+    microphone: mic_button
+    speaker: speaker_button
+    next_button: nxt_button
+    toolbar: toolbar  
+
+    GridLayout:
+        rows: 6
+        MDTopAppBar:
+            id: toolbar
+            disabled: False
+            title: "CVC Quiz II"
+            pos_hint: {'top':1}
+            left_action_items: [["arrow-left", lambda x: root.manager.switch('Cvc')]]
+            right_action_items: [["arrow-right", lambda x: root.manager.switch('Phase6Main')]]
+
+        GridLayout:
+            cols:3
+            BoxLayout:
+            WordOutline:
+                id: word_outline
+                disabled: True
+                auto_bring_to_front: False
+                do_scale: False
+                do_rotation: False
+                size: wordoutline_img.size
+                size_hint: None,None          
+                Image:
+                    id: wordoutline_img
+                    size: self.texture_size
+                    source:"imgs/cvcplus/empty.png"
+        
+            BoxLayout:
+
+        GridLayout:
+            cols:3
+            BoxLayout:
+            MagicWobbleIcon:
+                id: nxt_button
+                icon: "arrow-right-bold"
+                disabled: True
+                #pos: 500,130
+                pos_hint: {'center_x': 0.5}
+                size_hint_y: 0.5
+                on_press: 
+                    root.show_word()
+            BoxLayout:
+
+        MDProgressBar:
+            id: progress_bar
+            orientation: "horizontal"
+            type: "determinate"
+            value: 0
+            pos: 0, 100
+            size_hint_y: 0.03
+        GridLayout:
+            cols: 4
+            BoxLayout:
+            MagicWobbleIcon:
+                id: mic_button
+                icon: "microphone"
+                icon_color: 1,0,1,1
+                size_hint_x: 1
+                #set_size: 64,64
+                #pos: 200,10
+                on_press: 
+                    root.validate()
+                    self.wobble()
+            MagicWobbleIcon:
+                id: speaker_button
+                icon: "volume-high"
+                size_hint_x: 1
+                
+                #set_size: 64,64
+                #pos: 300,10
+                on_press: 
+                    self.wobble()
+                    root.listen_answer()
+            BoxLayout:
+        BoxLayout:
+
+
+###################################################################################
+<P6Title>:
+    disabled: True
+
+<Phase6Main>:
+    dipthongs_samp: dipthongs_samp
+    digraphs_samp: digraphs_samp
+    consblends_samp: consblends_samp
+    GridLayout:
+        rows: 3
+
+        MDTopAppBar:
+            title: "Dipthongs, Digraphs & Consonant Blends"
+            pos_hint: {'top':1}
+            left_action_items: [["home", lambda x: root.manager.switch('MainMenu')]]
+            right_action_items: [["arrow-right", lambda x: root.manager.switch('P6Quiz')]]
+        
+        GridLayout:
+            cols: 3
+
+            #1111111
+            GridLayout:
+                rows: 3
+                P6Title:
+                    pos: 50, 230
+                    size_hint: None, None
+                    size: lbl_id.size
+                    MDLabel:
+                        id: lbl_id
+                        text: "Dipthongs"
+                GridLayout:
+                    ######TODO
+                    cols: 2
+                    id: dipthongs_samp
+                    spacing: 5
+                    size_hint_y: 1
+
+                
+                MDRectangleFlatButton:
+                    text: "example"
+                    pos: 50, 0
+                    on_release:
+                        root.manager.current = "Dipthongs"
+
+            #22222222
+            GridLayout:
+                rows: 3
+
+                P6Title:
+                    pos: 280, 230
+                    size_hint: None, None
+                    size: lbl_id.size
+                    MDLabel:
+                        id: lbl_id
+                        text: "Digraphs"
+                GridLayout:
+                    ######TODO
+                    cols: 3
+                    id: digraphs_samp
+                    spacing: 5
+                    size_hint_y: 1
+
+                
+                MDRectangleFlatButton:
+                    text: "example"
+                    pos: 280, 0
+                    on_release:
+                        root.manager.current = "Digraphs"
+
+            #3333333            
+            GridLayout:
+                rows: 3
+
+                P6Title:
+                    pos: 510, 230
+                    size_hint: None, None
+                    size: lbl_id.size
+                    MDLabel:
+                        id: lbl_id
+                        text: "Consonant Bends"
+                GridLayout:
+                    ######TODO
+                    cols: 4
+                    id: consblends_samp
+                    spacing: 5
+                    size_hint_y: 1
+
+                
+                MDRectangleFlatButton:
+                    text: "example"
+                    pos: 510, 0
+                    on_release:
+                        root.manager.current = "ConsBlends"
+        BoxLayout:
+                
+          
+
+<Sample>:
+<Dipthongs>:
+    MDTopAppBar:
+        title: "Dipthongs Examples"
+        pos_hint: {'top':1}
+        left_action_items: [["arrow-left", lambda x: root.manager.switch('Phase6Main')]]
+        right_action_items: [["arrow-right", lambda x: root.manager.switch('P6Quiz')]]
+
+
+    MDGridLayout:
+        id: dipthongs
+        pos_hint: {"center_y": 0.4, "center_x": 0.5}
+        cols: 7
+        adaptive_size: True
+        spacing: 5,5
+
+
+<Digraphs>:
+    MDTopAppBar:
+        title: "Digraphs Examples"
+        pos_hint: {'top':1}
+        left_action_items: [["arrow-left", lambda x: root.manager.switch('Phase6Main')]]
+        right_action_items: [["arrow-right", lambda x: root.manager.switch('P6Quiz')]]
+
+
+    MDGridLayout:
+        id: digraphs
+        pos_hint: {"center_y": 0.4, "center_x": 0.5}
+        cols: 7
+        adaptive_size: True
+        spacing: 5,5
+
+<ConsBlends>:
+    MDTopAppBar:
+        title: "Consonant Bends"
+        pos_hint: {'top':1}
+        left_action_items: [["arrow-left", lambda x: root.manager.switch('Phase6Main')]]
+        right_action_items: [["arrow-right", lambda x: root.manager.switch('P6Quiz')]]
+
+
+    MDGridLayout:
+        id: consblends
+        pos_hint: {"center_y": 0.4, "center_x": 0.5}
+        cols: 7
+        adaptive_size: True
+        spacing: 5,5
+            
+
+<WordOutlineRed>:
+<P6Quiz>:
+    word_outline: word_outline
+    progress_bar: progress_bar
+    microphone: mic_button
+    speaker: speaker_button
+    next_button: nxt_button
+    toolbar: toolbar
+    
+    GridLayout:
+        rows: 6
+        MDTopAppBar:
+            id: toolbar
+            disabled: False
+            title: "Dipthongs, Digraphs & Consonant Blends Quiz"
+            pos_hint: {'top':1}
+            left_action_items: [["home", lambda x: root.manager.switch('MainMenu')]]
+
+        GridLayout:
+            cols:3
+            BoxLayout:
+            WordOutlineRed:
+                id: word_outline
+                disabled: True
+                auto_bring_to_front: False
+                do_scale: False
+                do_rotation: False
+                size: wordoutline_img.size
+                size_hint: None,None          
+                Image:
+                    id: wordoutline_img
+                    size: self.texture_size
+                    source:"imgs/cvcplus/empty.png"
+        
+            BoxLayout:
+
+        GridLayout:
+            cols:3
+            BoxLayout:
+            MagicWobbleIcon:
+                id: nxt_button
+                icon: "arrow-right-bold"
+                disabled: True
+                pos_hint: {'center_x': 0.5}
+                size_hint_y: 0.5
+                on_press: 
+                    root.show_word()
+            BoxLayout:
+
+        MDProgressBar:
+            id: progress_bar
+            orientation: "horizontal"
+            type: "determinate"
+            value: 0
+            pos: 0, 100
+            size_hint_y: 0.03
+        GridLayout:
+            cols: 4
+            BoxLayout:
+            MagicWobbleIcon:
+                id: mic_button
+                icon: "microphone"
+                icon_color: 1,0,1,1
+                size_hint_x: 1
+                #set_size: 64,64
+                #pos: 200,10
+                on_press: 
+                    root.validate()
+                    self.wobble()
+            MagicWobbleIcon:
+                id: speaker_button
+                icon: "volume-high"
+                size_hint_x: 1
+                
+                #set_size: 64,64
+                #pos: 300,10
+                on_press: 
+                    self.wobble()
+                    root.listen_answer()
+            BoxLayout:
+        BoxLayout:

@@ -1,0 +1,11 @@
+__psycache__/
+.buildozer/
+bin/
+adb.exe
+AdbWinApi.dll
+AdbWinUsbApi.dll
+backup.zip
+backup2.zip
+for_non_android.zip
+ok but no mic.zip
+working but small screen.zip
